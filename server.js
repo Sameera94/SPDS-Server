@@ -2,14 +2,18 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 3001;
 var mongoose = require('mongoose');
-var Task = require('./api/models/todoListModel');
-var User = require('./api/models/userModel');
+
+//Models
+var Task  = require('./api/models/todoListModel');
+var User  = require('./api/models/user');
+var Order = require('./api/models/order');
+
 var bodyParser = require('body-parser');
 var cors = require('cors')
 
 //Mongoose configurations
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/AtsDB');
+mongoose.connect('mongodb://localhost:27017/SPDS_DB');
 
 //Bodyparser Configurations
 app.use(bodyParser.urlencoded({extended: true}));
