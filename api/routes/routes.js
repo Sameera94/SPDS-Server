@@ -7,22 +7,6 @@ module.exports = function(app) {
 	var ridder   = require('../controllers/ridderController');
 	var order	 = require('../controllers/orderController')
 
-	/*
-		// todoList Routes
-		app.route('/tasks')
-			.get(todoList.list_all_tasks)
-			.post(todoList.create_a_task);
-
-		app.route('/tasks/:taskId')
-			.get(todoList.read_a_task)
-			.put(todoList.update_a_task)
-			.delete(todoList.delete_a_task);
-	
-    	app.route('/user')
-        	.get(user.list_all_users)
-        	.post(user.create_a_user);
-	*/
-
     // login routes
     app.route('/login')
         .post(user.validateUserLogin);
@@ -39,8 +23,20 @@ module.exports = function(app) {
 	app.route('/createNewOrder')
 		.post(order.createNewOrder)
 	
-	app.route('/getAllOrders')
-		.post(order.getAllOrders)
+	app.route('/getAllNewOrders')
+		.post(order.getAllNewOrders)
 
+	app.route('/getAllOrdersDue')
+		.post(order.getAllOrdersDue)
+
+	app.route('/cancelOrder')
+		.post(order.cancelOrder)
+
+	app.route('/getAllOrdersDesktop')
+		.post(order.getAllOrdersDesktop)
+
+	app.route('/getAllRidders')
+		.post(order.getAllRidders)
+		
 
 };

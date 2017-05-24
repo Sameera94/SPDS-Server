@@ -22,9 +22,14 @@ exports.validateUserLogin = function (req, res) {
 			}
 
 			if (results.length > 0) {
-				res.status(200).send(true);
+				res.status(200).send({
+					status: true,
+					user: results
+				});
 			} else {
-				res.status(200).send(false);
+				res.status(200).send({
+					status: false
+				});
 			}
 		});
 	});
